@@ -11,6 +11,7 @@ class ComposerStaticInit3fc2721ad245472d249d9d2304f1a745
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit3fc2721ad245472d249d9d2304f1a745' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Config' => __DIR__ . '/../..' . '/class/config.php',
+        'Cttaxmeta' => __DIR__ . '/../..' . '/class/Cttaxmeta.php',
         'ProductCat' => __DIR__ . '/../..' . '/Product.php',
     );
 

@@ -10,5 +10,6 @@ return array(
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit3fc2721ad245472d249d9d2304f1a745' => $vendorDir . '/composer/autoload_static.php',
     'Config' => $baseDir . '/class/config.php',
+    'Cttaxmeta' => $baseDir . '/class/Cttaxmeta.php',
     'ProductCat' => $baseDir . '/Product.php',
 );

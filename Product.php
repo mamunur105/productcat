@@ -22,6 +22,7 @@ class ProductCat
   public function include(){
     require_once('vendor/autoload.php');
     require_once('functions/helping.php');
+    new Cttaxmeta();
   }
   public function hooking(){
     add_filter( 'theme_page_templates', [$this,'fullWidthPage'] );
@@ -99,6 +100,7 @@ class ProductCat
   			'pad_counts' => true,
   			'child_of'   => $parent
   		);
+      // $product_categories = get_terms( 'category', $args );
   		$product_categories = get_terms( 'product_cat', $args );
   		ob_start();
   		if ( $product_categories ) {
@@ -108,9 +110,20 @@ class ProductCat
                     <div class="cat-item">
                         <a target="_blank" class="items-href" href="<?php echo get_term_link( $category->term_id ); ?>">
                           <?php
-                            $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
-                            // get the image URL
-                            $image = wp_get_attachment_url( $thumbnail_id );
+
+                            $image_id = get_term_meta ($category->term_id, 'category-image-id', true );
+                            $product_cat_image = get_term_meta( $category->term_id, 'thumbnail_id', true );
+
+                            if ( $image_id ) { 
+                              $image = wp_get_attachment_image_url( $image_id,'full' );
+                            }
+                            elseif($product_cat_image){
+                              $image = wp_get_attachment_image_url( $product_cat_image,'full' );
+                            }
+                            else{
+                              $image = "";
+                            }
+
                             // print the IMG HTML
                             echo "<img class='catimage' src='{$image}' alt='' />";
                           ?>

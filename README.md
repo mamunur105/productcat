@@ -1,1 +1,2 @@
 productcat
+category slider 
